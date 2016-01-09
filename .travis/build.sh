@@ -11,3 +11,5 @@ docker tag -f "$REPOSITORY/debian-$ARCH:jessie" "debian:jessie"
 patch -p0 --no-backup-if-mismatch --directory=$PROJECT < .patch/$VERSION/Dockerfile.patch
 
 docker build -t "$TAG:$TAGSPECIFIER" --build-arg PG_VERSION="$VERSIONPIN" "$PROJECT/$VERSION"
+
+docker run --rm "$TAG:$TAGSPECIFIER" psql --version
