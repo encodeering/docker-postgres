@@ -4,3 +4,27 @@ sudo: required
 
 services:
 - docker
+
+env:
+  global:
+    - secure: "Yrobs+bI5yZhPgLsMpS2IhSEANbJ7yJ5TtUc94fIw2RilDqaKe+/xxstakbsfUjMThY3sLBCOeFHwISu3WF0zHNQ+cSr03E/asvrlWDUa0rz1zELSL43DJjE2q7JvJO0d/RpUwxaTC4n3TUdJKSf5ZBSb9ffaC5GtATmfme0J7q0h/TNF8ILoxuhCJRrc85K1YDFcvhs9QMjgqan8+AogSHxHTH/rv5br6Ft3ciC30/+ucndwlSB4EqjjVeqiGWh3r/Hr00aWZauGJFyjTqvlPsPbSrdQPQ21/YpSca68UsYelg9YJCTR+o5FatbeUcYQfh8h3gDgFOCj2KdtK91XZs+fkcpt5RnHZeXEVA9kLyEBy6GaSCHtYHd+sjjbzcMyPpa4OuRvsYOcByzpJD2eLPcs2tpbqzeDuMk5QdPPMSKVb0C7lgqmlX78SL5CoXK8WYjmx1cGj46ieAu9madeh+wVu/JOrhBiq74GEUwvQCHAFVv7iWcMAEjtSkGT0Q/uJMQj73Qo2v0/rLYdASNr7iIDmobMUksPPIkicStI8VWnEWduH5FAA2zg2jVmqvNWzneKBSgWhW84q/PsWnNYqI58Qvr1fAHZig3bhxRzTlbYovrqdHKgtLF03/QoyN08HoVrsR6VmSRexSUooJ9zU5SLqXKUYq5PJxGpvEOMdU="
+    - secure: "aoYTfm0bLlfBIpFsvXpHrDz1Et3LLdSXVADACdoi4/aksbgI+3DYX1AnT3KKvqE4wKVdXhZErYbUSDLWex8ZV9djlbRq75r2HusFATMmO+okjwywTCly5QtbKW0XCFgkGRj8lpuxbYtA/WQ5Bh/YIIoa8ws3KnJqthC5Mw/qRLzN2AQ81zZ9svHv4vAzHp8goq5z74+s0T7PWbKcFCWRe2j5fNCTk0dDZLbJ3g26BFk8G3bSJhjitMUuCjuBRC+M7FyGGLHdKpFxzBuFBXPDbIQwf0pcelYBb91kBXUjbQML5HtWuF4l+H6Uk3cpL3nyNikz7AqQjJFJZ8M3MW78I6s7cVTiYdxpGOudMjmiWviYpxco5YpJa1sZDe4rf1bCwBK8AniuL7t9f4p3wTgSPIDvVFLPnXg7GQmiK91GER7xpymaBdBuLpErnXME4Mhe53uqwaiU/QppEDhMe6SxXXe7J1ukxeFFp9OHVl56psqrK5gz2oo6v1pGLBuM6+NUn9nZW9OBoPdDpqUAWVfKUQaOFdMiFBwxIuDtNfadvEkDuph8rE6KnuGcyHP8iP/8XLOUl4Jx/PyyjPc4GZeGsuchaJufX0EBF7T9KKLpdmnxRawzuLfwhJoZ2EltSitUubygyBhTslkAOODdFHGmRpvmq2wCdqvgE3ZIm+FPSQ4="
+    - secure: "O8HflK6oSTgS37nLDJeEbWQg9Xj+hYs+SqBT0aefFAgmU7PVPK9SGG8c70kG7bCq3QNd1gLjkUPnKmagI3MrWckWmO1J8lGzncioM3wQz271WtMadtHt1AsqQVMWcr26r1tdaFywyQXcXK6Ymoa+LnitjFcKxywtVY03JpeRg0o6LM2XX3KggCD+afh0QwxoKuRTr9KTSFE3ES3yrccqw6PPjUlmQ8UnzRdmWVX8w6KN4zIN8IMfUC0A/6y7vbhgR1SSdc9C7XP95fGdEDmRfpD15hlDNdYYpbEr7bgAZNHEC4RB6GIBnBqZw/PlUV73zxXLuOQNTwfEmGi1j5rtqDCsXoUtFeoNp84aWwImONtFWSAsAUi2U/HICuuagvLflHweqV+ITsy3WbUB147H1w4Qz+RUaMRxx3YC9XhsGRhN4dKRTzHrQ3tjlDeNM49rCePUC+ZuUKH1ykRP/FP1Fi1NOhyApZUPyVYhCxsWIjf0HCUJ++xyhGXrbQ0Wg1lvmGvRIsGkFCYPwm51bN8Y2JyKziQ5b5TorMgTfXEWas8mI18aAgT0Xi/8kk4liYZLAcRCv3qB+E2hgKyuwlnhhtLC5tCZaVTuQsV4GYg3SdJ59cXBV4zY8PskzSs0nmXo97QKk2Qmp4CodHcKfgiBdmp7N3apIsF6et9S3oS0LDE="
+    - PROJECT="postgres"
+    - REPOSITORY="encodeering"
+  matrix:
+    - ARCH=amd64 VERSION=9.4
+
+before_script:
+- sudo cat /proc/sys/fs/binfmt_misc/status
+- sudo sh -c "echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:' > /proc/sys/fs/binfmt_misc/register"
+- git clone --depth 1 https://github.com/docker-library/postgres.git "$PROJECT"
+
+script:
+- sudo -E sh .travis/build.sh
+
+after_success:
+- sudo -E sh .travis/deploy.sh
+
+after_script:
+- docker images
