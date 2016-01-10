@@ -13,7 +13,7 @@ env:
     - PROJECT="postgres"
     - REPOSITORY="encodeering"
   matrix:
-    - ARCH=amd64 VERSION=9.4
+    - ARCH=amd64 VERSION=9.4 VERSIONPIN=9.4.5-0+deb8u1
 
 before_script:
 - sudo cat /proc/sys/fs/binfmt_misc/status
