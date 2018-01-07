@@ -2,11 +2,9 @@ diff --git a/9.4/Dockerfile b/9.4/Dockerfile
 index 171997f..735baf8 100644
 --- a/9.4/Dockerfile
 +++ b/9.4/Dockerfile
-@@ -49,2 +49,2 @@ RUN set -ex; \
--ENV PG_MAJOR 9.4
+@@ -50 +50 @@ RUN set -ex; \
 -ENV PG_VERSION 9.4.15-1.pgdg80+1
-+ARG PG_MAJOR=9.4
-+ARG PG_VERSION
++ENV PG_VERSION 9.4.15-0+deb8u1
 @@ -56 +56 @@ RUN set -ex; \
 -		amd64|i386|ppc64el) \
 +		*) apt-get update;; *) \
