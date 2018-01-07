@@ -19,7 +19,7 @@ env:
     - ARCH=amd64 VERSION=9.4 VERSIONPIN=9.4.15-0+deb8u1
 
 install:
-- bash <(curl https://raw.githubusercontent.com/encodeering/docker-ci/master/install.sh) 0.1.4
+- bash <(curl https://raw.githubusercontent.com/encodeering/docker-ci/master/install.sh) 0.1.5
 
 before_script:
 - sudo -E bash ./module.sh "." "./setup.sh" "https://github.com/docker-library/postgres.git" "modules/$PROJECT" "$COMMIT"
