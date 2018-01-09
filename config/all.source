@@ -1,0 +1,3 @@
+SCM_SOURCE=https://github.com/docker-library/postgres.git
+SCM_TARGET=modules/$PROJECT
+SCM_COMMIT=aaf209829e072bec11bca1f6f0b52e756dfc096e
