@@ -2,9 +2,9 @@
 
 set -e
 
-import com.encodeering.docker.config
-import com.encodeering.docker.docker
+import com.encodeering.ci.config
+import com.encodeering.ci.docker
 
 ./build-${BASE}.sh
 
-docker run --rm "$DOCKER_IMAGE" psql --version
+docker-verify psql --version
