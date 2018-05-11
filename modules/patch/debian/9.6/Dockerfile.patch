@@ -1,0 +1,12 @@
+diff --git a/9.6/Dockerfile b/9.6/Dockerfile
+index 3b96768..186bbb4 100644
+--- a/9.6/Dockerfile
++++ b/9.6/Dockerfile
+@@ -51 +51 @@ RUN set -ex; \
+-	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
++	gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys "$key"; \
+@@ -57 +57 @@ ENV PG_MAJOR 9.6
+-ENV PG_VERSION 9.6.9-1.pgdg90+1
++ENV PG_VERSION 9.6.7-0+deb9u1
+@@ -62,0 +63 @@ RUN set -ex; \
++		*) apt-get update;; \

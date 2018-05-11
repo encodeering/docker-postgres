@@ -1,7 +1,0 @@
-diff --git a/9.4/alpine/Dockerfile b/9.4/alpine/Dockerfile
-index 59fd13a..046caeb 100644
---- a/9.4/alpine/Dockerfile
-+++ b/9.4/alpine/Dockerfile
-@@ -60 +60 @@ RUN set -ex \
--		perl \
-+		perl-utils \
