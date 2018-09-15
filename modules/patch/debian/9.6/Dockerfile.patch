@@ -1,16 +1,16 @@
 diff --git a/9.6/Dockerfile b/9.6/Dockerfile
-index 3b96768..a1e81a4 100755
+index 4ef1423..8f2a11b 100755
 --- a/9.6/Dockerfile
 +++ b/9.6/Dockerfile
-@@ -24 +24 @@ RUN set -x \
+@@ -31 +31 @@ RUN set -x \
 -	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
 +	&& gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
-@@ -51 +51 @@ RUN set -ex; \
+@@ -67 +67 @@ RUN set -ex; \
 -	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 +	gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys "$key"; \
-@@ -57 +57 @@ ENV PG_MAJOR 9.6
--ENV PG_VERSION 9.6.9-1.pgdg90+1
+@@ -74 +74 @@ ENV PG_MAJOR 9.6
+-ENV PG_VERSION 9.6.10-1.pgdg90+1
 +ENV PG_VERSION 9.6.10-0+deb9u1
-@@ -62,0 +63,2 @@ RUN set -ex; \
+@@ -82,0 +83,2 @@ RUN set -ex; \
 +	    *) apt-get update; \
 +	       ;; \
