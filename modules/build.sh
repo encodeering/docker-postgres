@@ -7,4 +7,4 @@ import com.encodeering.ci.docker
 
 ./build-${BASE}.sh
 
-docker-verify psql --version
+docker-verify psql --version | dup | contains "${VERSION}"
