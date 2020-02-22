@@ -1,10 +1,10 @@
 diff --git a/9.6/Dockerfile b/9.6/Dockerfile
-index 39e0f9b..7a0755a 100755
+index fbe2662..d8b3c47 100644
 --- a/9.6/Dockerfile
 +++ b/9.6/Dockerfile
-@@ -74 +74 @@ ENV PG_MAJOR 9.6
--ENV PG_VERSION 9.6.15-1.pgdg90+1
-+ENV PG_VERSION 9.6.15-0+deb9u1
-@@ -82,0 +83,2 @@ RUN set -ex; \
+@@ -78 +78 @@ ENV PG_MAJOR 9.6
+-ENV PG_VERSION 9.6.17-1.pgdg90+1
++ENV PG_VERSION 9.6.17-0+deb9u1
+@@ -86,0 +87,2 @@ RUN set -ex; \
 +		*) apt-get update; \
 +			;; \
