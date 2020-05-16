@@ -7,10 +7,10 @@
 
 - https://hub.docker.com/r/encodeering/postgres-armhf/
 
-    ```docker pull encodeering/postgres-armhf:9.4-debian```  
-    ```docker pull encodeering/postgres-armhf:9.4-alpine```
+    ```docker pull encodeering/postgres-armhf:9.6-debian```  
+    ```docker pull encodeering/postgres-armhf:9.6-alpine```
 
 - https://hub.docker.com/r/encodeering/postgres-amd64/
 
-    ```docker pull encodeering/postgres-amd64:9.4-debian```  
-    ```docker pull encodeering/postgres-amd64:9.4-alpine```
+    ```docker pull encodeering/postgres-amd64:9.6-debian```  
+    ```docker pull encodeering/postgres-amd64:9.6-alpine```
