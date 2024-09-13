@@ -1,0 +1,12 @@
+{
+    "concourse": {
+        "dind": "unstable"
+    },
+    "platforms": ["amd64", "armhf"],
+    "pipelines": [
+        { "project": "postgres", "base": "debian", "version": "9.6", "variant": "" },
+        { "project": "postgres", "base": "debian", "version": "11",  "variant": "" },
+        { "project": "postgres", "base": "alpine", "version": "9.6", "variant": "" },
+        { "project": "postgres", "base": "alpine", "version": "11",  "variant": "" }
+    ]
+}
