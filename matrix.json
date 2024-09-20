@@ -1,0 +1,12 @@
+{
+    "concourse": {
+        "dind": "0.1.17"
+    },
+    "platforms": ["amd64", "armhf"],
+    "pipelines": [
+        { "project": "postgres", "base": "debian", "version": "15", "variant": "" },
+        { "project": "postgres", "base": "debian", "version": "16",  "variant": "" },
+        { "project": "postgres", "base": "alpine", "version": "15", "variant": "" },
+        { "project": "postgres", "base": "alpine", "version": "16",  "variant": "" }
+    ]
+}
